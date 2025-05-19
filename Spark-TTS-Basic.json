@@ -1,0 +1,156 @@
+{
+  "id": "f3c3d3cd-5ef9-4ccc-9488-7fde66abbb62",
+  "revision": 0,
+  "last_node_id": 3,
+  "last_link_id": 2,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "LoadAudio",
+      "pos": [
+        -205.44264221191406,
+        75.02256774902344
+      ],
+      "size": [
+        274.080078125,
+        136
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.33",
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "2025-05-15 12-55-59.mp3",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 1,
+      "type": "Spark_TTS_Clone",
+      "pos": [
+        147.9224853515625,
+        99.7995376586914
+      ],
+      "size": [
+        469.20159912109375,
+        608.98828125
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Audio_reference",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Audio",
+          "type": "AUDIO",
+          "links": [
+            2
+          ]
+        },
+        {
+          "name": "Node Status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "KERRY-YUAN/ComfyUI_Spark_TTS",
+        "ver": "bb6f331d4af9614550e70bb26e9d8a4daedbead9",
+        "Node name for S&R": "Spark_TTS_Clone"
+      },
+      "widgets_values": [
+        "Cloning A voice in comfy ui is interesting. In this video we are trying to clone a voice using some custom nodes. The model is very light weight and can run locally on your machine. ",
+        "Today we’re gonna be testing SparkTTS node inside comfy ui. We will use this node to clone and generate audio clips inside comfy ui. ",
+        "./models/TTS/Spark-TTS/Spark-TTS-0.5B",
+        "./custom_nodes/ComfyUI_Spark_TTS/Spark-TTS-Speakers",
+        "ad_male_en",
+        "moderate",
+        "moderate",
+        0.8,
+        50,
+        0.9,
+        6000,
+        true
+      ]
+    },
+    {
+      "id": 3,
+      "type": "PreviewAudio",
+      "pos": [
+        705.9171142578125,
+        151.04904174804688
+      ],
+      "size": [
+        683.173583984375,
+        330.54302978515625
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 2
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.33",
+        "Node name for S&R": "PreviewAudio"
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      1,
+      0,
+      "AUDIO"
+    ],
+    [
+      2,
+      1,
+      0,
+      3,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "frontendVersion": "1.18.10",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
